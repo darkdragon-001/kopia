@@ -107,6 +107,7 @@ else
 travis-release:
 	$(retry) $(MAKE) goreleaser
 	$(retry) $(MAKE) kopia-ui
+	tools/flathub.sh
 	$(MAKE) lint vet test-with-coverage html-ui-tests
 	$(retry) $(MAKE) layering-test
 	$(retry) $(MAKE) integration-tests
